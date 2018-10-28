@@ -20,23 +20,35 @@
         <div class="row align-items-center justify-content-center">
           <h1>Mues</h1>
         </div>
+        <p class="text-center font-italic">Specify a venue and range of dates, and find all of the events occuring at that venue between those dates</p>
 
         <div class="row align-items-center justify-content-center">
-          <form style="border:1px solid black; margin:20px; padding:20px; border-radius: 15px;">
+          <form style="border:1px solid black; margin:20px; padding:20px; border-radius: 15px;" method="post">
             <div class="form-group">
               <label for="venueName"><b>Venue</b></label>
-              <input type="text" class="form-control" id="venueName" aria-describedby="venueHelp" placeholder="Name of Venue">
+              <input type="text" class="form-control is-invalid" id="venueName" aria-describedby="venueHelp" placeholder="Name of Venue">
+              <div class="invalid-feedback" id="venueFeedback">
+                Please choose a venue.
+              </div>
               <small id="venueHelp" class="form-text text-muted">Type in the name of the venue you are interested in attending (i.e. Echostage)</small>
             </div>
             <div class="form-group">
               <label for="startDate"><b>Start Date</b></label>
               </br>
-              <input type="date" class="form-control" id="startDate">
+              <input type="date" class="form-control is-invalid" id="startDate">
+              <div class="invalid-feedback" id="startDateFeedback">
+                Please choose a start date.
+              </div>
+              <small id="startDateHelp" class="form-text text-muted">Select a start date for the range of dates (must be current date or later)</small>
             </div>
             <div class="form-group">
               <label for="endDate"><b>End Date</b></label>
               </br>
-              <input type="date" class="form-control" id="endDate">
+              <input type="date" class="form-control is-invalid" id="endDate">
+              <div class="invalid-feedback" id="endDateFeedback">
+                Please choose a end date.
+              </div>
+              <small id="startDateHelp" class="form-text text-muted">Select an end date for the range of dates (must be start date or later)</small>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
@@ -44,8 +56,6 @@
         
       </div>
     </div>
-
-    
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

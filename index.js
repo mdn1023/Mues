@@ -2,11 +2,14 @@ const rp = require("request-promise");
 
 const apiKey = "6hVA2yrccxVrs88S";
 var artistID = "8561929";
+var venue = "Echostage";
 
 var url = `https://api.songkick.com/api/3.0/artists/${artistID}/calendar.json?apikey=${apiKey}`;
 
+var venueUrl = `https://api.songkick.com/api/3.0/search/venues.json?query=${venue}&apikey=${apiKey}`;
+
 var options = {
-    uri: url,
+    uri: venueUrl,
     headers: {
         'User-Agent': 'Mues',
         'Accept': 'application/json'
