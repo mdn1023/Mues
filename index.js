@@ -1,4 +1,5 @@
 const rp = require("request-promise");
+var events = require("./web/js/songkick_requests");
 
 const apiKey = "6hVA2yrccxVrs88S";
 var artistID = "8561929";
@@ -16,9 +17,16 @@ var options = {
     },
 }
 
-rp(options).then(data => {
-    var upcomingEvents = JSON.parse(data).resultsPage.results.event;
-    console.log(upcomingEvents[0]);
-}).catch(err => {
-    console.log(err);
-});
+// rp(options).then(data => {
+//     var json = JSON.parse(data);
+//     var venueList = json.resultsPage.results.venue;
+//     for (i = 0; i < venueList.length; i++) {
+//         console.log(venueList[i]);
+//     }
+// }).catch(err => {
+//     console.log(err);
+// });
+
+events.getVenueID(venue, apiKey).then(data => {
+    events.searchEventsAtVenue(data, apiKey, "2018-10-29", "2018-11-30");
+}).catch(error => console.log(error));
