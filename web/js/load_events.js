@@ -36,6 +36,7 @@ $(document).ready(function(){
                             var event = events[i].displayName;
                             var date = events[i].start.date;
                             var time = events[i].start.time;
+                            var link = events[i].uri;
                             var splitString = " at " + venueName;
 
                             var formattedDate = new Date(date).toLocaleDateString(undefined, {
@@ -72,10 +73,13 @@ $(document).ready(function(){
                             eventsTable.append(
                                 `<tr>` +
                                     `<td class="text-center">${number}</td>` +
-                                    `<td class="text-center">${event}</td>` +
+                                    `<td class="text-center"><a href="${link}" target="_blank">${event}</a></td>` +
                                     `<td class="text-center">${venueName}</td>` +
                                     `<td class="text-center">${formattedDate}</td>` +
                                     `<td class="text-center">${timeValue}</td>` +
+                                    `<td class="text-center">` + 
+                                        `<button type="button" class="btn btn-secondary">Listen</button>` + 
+                                    `</td>` +
                                 `</tr>`
                             );
                         }
