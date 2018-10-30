@@ -3,7 +3,7 @@ var events = require("./web/js/songkick_requests");
 
 const apiKey = "6hVA2yrccxVrs88S";
 var artistID = "8561929";
-var venue = "Echostage";
+var venue = "The Anthem";
 
 var url = `https://api.songkick.com/api/3.0/artists/${artistID}/calendar.json?apikey=${apiKey}`;
 
